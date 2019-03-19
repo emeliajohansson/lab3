@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinner planner</title>
+
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="lab1.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+</head>
+	<body>
+	 <div class="jumbotron jumbotron-fluid">
+		<h1 id="myHeader">Dinner planner</h1>
+		</div>		
+		<div  id="overView">
+			<div class="container-fluid">
+				<div class="row" >
+					<div class="col-sm-6">
+						<span id="numOfGuests"></span>
+					</div>			
+					<div class="col-sm-6">
+						<button id="button" class="btn" role="button">Go back and edit dinner</button>
+					</div>
+				</div>
+				<hr style="border-bottom: 1px solid black; width: 95%;">
+			</div>
+		<div class="container">	
+			<div id="menu"/>
+		</div>
+		</div>
+		<hr style="border-bottom: 1px solid black; width: 95%;">
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-1">
+				</div>
+				<div class="col-sm-10">
+				<button id="button" class="btn" role="button">Print Full Recipe</button>
+				</div>
+				<div class="col-sm-1">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+	<!-- The application JavaScript code -->
+	<script src="js/app.js"></script>
+	<script src="js/model/dinnerModel.js"></script> 
+	<script src="js/view/homeView.js"></script>
+	<script src="js/view/selectView.js"></script>
+	<script src="js/view/selectView2.js"></script>
+	<script src="js/view/detailView.js"></script>
+	<script src="js/view/overView.js"></script>
+	<script src="js/view/printView.js"></script>
+	<!--<script src="../dinnerplanner-html/js/view/sidebarView.js"></script>
+	<script src="../dinnerplanner-html/js/view/DinnerOverviewView.js"></script>
+	 TODO: Here you should include JS code for your other views -->
+	</body> 
+</html>

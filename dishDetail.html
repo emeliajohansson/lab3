@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinner planner</title>
+
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="lab1.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+</head>
+	<body>
+	 <div class="jumbotron jumbotron-fluid"> 
+		<h1 id="myHeader">Dinner planner</h1>
+	</div>
+	<div class="container-fluid" id="container">
+		<div class="row">
+			<div id = "sidebar" class="col-md-2">
+				<nav class="navbar navbar-expand-md navbar-light">
+					<button class="navbar-toggler d-md-none" type="button" data-toggle="collapse" data-target="#sidebarContent" ><span class="glyphicon glyphicon-menu-hamburger">=</span></button>
+					<div class="collapse navbar-collapse" id="sidebarContent">
+						<div class="col-xs-2">
+							<div id="selectPpl">
+								<div class="row">
+									<h4>My Dinner</h4>
+								</div>
+								<div>
+									<div class="flexbox">
+										<label for="people" id="confDinner">People</label>
+										<input type="text" pattern="[0-9]*" class="form-control" id="confDinner" value="8">
+										<button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus">+</span></button>
+										<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus">-</span></button>
+									</div>
+								</div>
+
+								<hr style="border-bottom: 1px solid black;">
+								<div class="row">
+									<div class="col-8" id="confDinner">
+										Dish Name
+									</div>
+									<div class="col-4" id="confDinner">
+										Cost
+									</div>
+								</div>
+								<hr style="border-bottom: 1px solid black;">				
+							</div>
+							<div class="container text-right">
+								<div class="col-12">
+										<span class="d-inline" id="dinnerCost"><p>SEK 0.00</p></span>
+								</div>
+							</div>
+							<div class="buttonDiv" id="confDinner">
+								<button  id="button" class="btn" role="button">Confirm Dinner</button>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+			
+
+
+				<div class="col-md-10"
+					<div class="container-fluid">
+						<div id="detailView">		
+							<div class="row">
+								<div class="col-md-5">
+									<div id="dishInfo">	
+									</div>	
+								</div>
+								<div class="col-md-5" id="dishTable">
+									<div id="tableHeadline">								
+									</div>
+									<div id="dishIngredients">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+			</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+	<!-- The application JavaScript code -->
+	<script src="js/app.js"></script>
+	<script src="js/model/dinnerModel.js"></script> 
+	<script src="js/view/homeView.js"></script>
+	<script src="js/view/selectView.js"></script>
+	<script src="js/view/selectView2.js"></script>
+	<script src="js/view/detailView.js"></script>
+	<script src="js/view/overView.js"></script>
+	<script src="js/view/printView.js"></script>
+	<!--<script src="../dinnerplanner-html/js/view/sidebarView.js"></script>
+	<script src="../dinnerplanner-html/js/view/DinnerOverviewView.js"></script>
+	 TODO: Here you should include JS code for your other views -->
+	</body>
+</html>

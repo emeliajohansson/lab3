@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dinner planner</title>
+
+
+		<!-- Bootstrap CSS -->
+
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="lab1.css">
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+	</head>
+	<body>
+	
+	
+		<!--- Header --->
+		<div class="jumbotron jumbotron-fluid">
+			<h1 id="myHeader">Dinner planner</h1>
+		</div>	
+		
+		
+		<!--- Homescreen --->
+		<div class="container-fluid" id="homeView">	
+			<span id="description"></span>
+			<br>
+			<span id="homebtn"></span>
+		</div>
+		
+
+		<!-- Views with sidebar -->
+		<div class="container-fluid">
+			<div class="row">
+				<!-- Sidebar -->
+				<div class="col-md-3" id = "sidebarView">
+					<nav class="navbar navbar-expand-md navbar-light" >
+						<button class="navbar-toggler d-md-none" id="navbarButton" "type="button" data-toggle="collapse" data-target="#sidebarContent" ><span class="glyphicon glyphicon-menu-hamburger"> <div id="navbarPrice"></div></span></button>
+						<div class="collapse navbar-collapse" id="sidebarContent">
+							<div class="col-md-12">
+								<div class="row">
+									<h4 style="padding: 15px">My Dinner</h4>
+								</div>
+								<div id="NumberOfGuests">
+								</div>
+								  <button id="minusGuest" class="btn">-</button>
+								  <button id="plusGuest" class="btn">+</button>
+								<hr style="border-bottom: 1px solid black;">										
+								<div id="fullMenu">
+								</div>
+								<hr style="border-bottom: 1px solid black;">
+								<div class="container text-right">
+									<div class="col-12">
+											<span class="d-inline" id="dinnerCost"><p id="totalMenuPrice"></p></span>
+									</div>
+								</div>
+								<div class="buttonDiv" id="confDinner">
+									<button  id="confirmDinnerButton" class="btn" role="button">Confirm Dinner</button>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div>
+
+			
+				<!-- Select with loader! -->
+				<div class="col-md-9" id="selectView">
+					<p class="text-left"><b>FIND A DISH</b></p>
+					<div class="row">
+						<input id="searchText" type="text" placeholder="Enter keyword...">
+						<select id="searchType">
+							<option value="All">All</option>
+							<option value="main course">Main Course</option>
+							<option value="side dish">Side Dish</option>
+							<option value="dessert">Dessert</option>
+							<option value="appetizer">Appetizer</option>
+							<option value="salad">Salad</option>
+							<option value="bread">Bread</option>
+							<option value="soup">Soup</option>
+							<option value="beverage">Beverage</option>
+							<option value="sauce">Sauce</option>
+							<option value="drink">Drink</option>
+						</select>
+							<div id="searchBarButton"><button type="button" class="btn btn-warning" id="searchButton">Search</button></div>
+						</div>
+						<hr style="border-bottom: 1px solid black;">
+							<div id="loader"></div>
+							<div id="dishBoxes">
+								<div class="row" id="allDishes">
+								</div>
+							</div>
+						<div>
+					</div>
+				</div>
+
+
+		
+		
+				<!-- DishDetailView -->				
+				<div class="col-md-9" id="detailView">
+					<div id="loader" style="display: none;"></div>				
+					<div class="row" id="hideWhenLoader">
+						<div class="col-md-6">
+							<div id="dishInfo"></div>							
+						</div>
+						<br>
+						<div class="col-md-5" id="dishTable">							
+							<div id="dishIngredients">					
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<button id="addToMenuButton" class="btn" role="button">Add to menu</button>
+								</div>
+								<div class="col-md-6">
+									<button id="backEditDinnerButton" class="btn" role="button">Go back and edit dinner</button>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>	
+			</div>
+		</div>
+
+	
+	<!-- DinnerOverveiw -->		
+	<div  id="overview">
+		<div class="container-fluid">
+			<div class="row" >
+				<div class="col-sm-6" id="detailHeader">
+					<span id="numOfGuests"></span>
+				</div>			
+				<div class="col-sm-6" id="detailHeader">
+					<button id="backEditDinnerButton" class="btn" role="button">Go back and edit dinner</button>
+				</div>
+			</div>			
+			<hr style="border-bottom: 1px solid black; width: 95%;">
+			<div class="container">	
+			
+				<div id="menu"></div>
+				<div id="totalPrice"></div>
+			</div>			
+			<div class="container-fluid">
+			<hr style="border-bottom: 1px solid black; width: 95%;">
+				<div class="row">
+					<div class="col-sm-1">
+					</div>
+					<div class="col-sm-10" id="detailHeader">
+					<button id="printRecipeButton" class="btn" role="button">Print Full Recipe</button>
+					</div>
+					<div class="col-sm-1">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	
+	<!-- Print -->
+	<div  id="printView">
+		<div class="container-fluid">
+			<div class="row" >
+				<div class="col-sm-6">
+					<span id="numberOfGuests"></span>
+				</div>			
+				<div class="col-sm-6">
+					<button id="backEditDinnerButton" class="btn" role="button">Go back and edit dinner</button>
+				</div>
+			</div>
+			<hr style="border-bottom: 1px solid black; width: 95%;">
+			</div>	
+			<div class="container">	
+				<div id="dishPreparation">
+			</div>
+		</div>	
+	</div>	
+	
+		
+	<!-- Script Code -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+	<!-- The application code -->
+	<script src="js/model/dinnerModel.js"></script> 
+	<script src="js/app.js"></script>
+
+
+	<!--- View --->
+	<script src="js/view/homeView.js"></script>
+	<script src="js/view/selectView.js"></script>
+	<script src="js/view/sidebarView.js"></script>
+	<script src="js/view/detailView.js"></script>
+	<script src="js/view/overview.js"></script>
+	<script src="js/view/printView.js"></script>
+
+	<!--- Controller --->
+	<script src="js/controller/homeViewCont.js"></script>
+	<script src="js/controller/selectViewCont.js"></script>
+	<script src="js/controller/sidebarViewCont.js"></script>
+	<script src="js/controller/detailViewCont.js"></script>
+	<script src="js/controller/overviewViewCont.js"></script>
+	<script src="js/controller/printViewCont.js"></script>
+	</body>
+</html>
